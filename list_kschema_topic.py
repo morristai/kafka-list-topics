@@ -12,23 +12,8 @@ host_name = socket.gethostname()
 host_ip = socket.gethostbyname(host_name)
 env_ip = host_ip.split('.')[1]
 
-# TODO: loop through yml setting
 # K8S kschema service external IP
-ip_map = {
-    "60": "10.60.128.33:8081",     # dev/wu
-    "120": "10.120.128.33:8081",   # stg/wu
-    "180": "10.180.128.33:8081",   # prod/wu
-    "181": "10.181.129.40:8081",   # prod/we
-    "182": "10.182.128.131:8081",  # prod/uks
-    "183": "10.183.129.98:8081",   # prod/auc
-    "184": "10.184.129.98:8081",   # prod/sas
-    "185": "10.185.128.91:8081",   # prod/jpe
-    "186": "10.186.129.11:8081",   # prod/cac
-    "187": "10.187.128.149:8081",  # prod/cin
-    "188": "10.188.129.78:8081",   # prod/uaen
-}
-
-# base_url = f"http://{ip_map[env_ip]}/subjects/"
+ip_map = {}
 base_url = f"http://localhost:8080/subjects/"
 
 
